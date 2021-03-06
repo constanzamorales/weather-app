@@ -151,10 +151,6 @@ footer {
   font-size: 14px;
 }
 
-.next-days {
-  display: flex;
-}
-
 .small-weather-icon {
   max-width: 48px;
   margin: 10px auto;
