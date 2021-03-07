@@ -23,14 +23,13 @@ let weather = {
 
 let city = prompt("Enter a city");
 city = city.toLowerCase();
-let temperature = weather[city].temp;
-let celsiusTemp = Math.round(temperature);
-let fahrenheitTemp = Math.round(temperature * 9 / 5) + 32;
-let humidity = weather[city].humidity;
 
-if (city === "paris" || city === "tokyo" || city === "lisbon" || city === "moscow" || city === "san francisco") {
-  city = city.replace("p", "P");
-  alert(`It is currently ${weather.paris.temp} in ${city} with a humidity of ${humidity}%`);
+if (weather[city] !== undefined) {
+  let temperature = weather[city].temp;
+  let humidity = weather[city].humidity;
+  let celsiusTemp = Math.round(temperature);
+  let fahrenheitTemp = Math.round(temperature * 9 / 5) + 32;
+  alert(`It is currently ${celsiusTemp}°C (${fahrenheitTemp})°F in ${city} with a humidity of ${humidity}%`);
 } else {
   alert(`Sorry, we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`);
 }
