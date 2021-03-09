@@ -1,35 +1,36 @@
-let weather = {
-  "paris": {
-    temp: 19.7,
-    humidity: 80
-  },
-  "tokyo": {
-    temp: 17.3,
-    humidity: 50
-  },
-  "lisbon": {
-    temp: 30.2,
-    humidity: 20
-  },
-  "san francisco": {
-    temp: 20.9,
-    humidity: 100
-  },
-  "moscow": {
-    temp: -5,
-    humidity: 20
-  }
-};
-
-let city = prompt("Enter a city");
-city = city.toLowerCase();
-
-if (weather[city] !== undefined) {
-  let temperature = weather[city].temp;
-  let humidity = weather[city].humidity;
-  let celsiusTemp = Math.round(temperature);
-  let fahrenheitTemp = Math.round(temperature * 9 / 5) + 32;
-  alert(`It is currently ${celsiusTemp}°C (${fahrenheitTemp})°F in ${city} with a humidity of ${humidity}%`);
-} else {
-  alert(`Sorry, we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`);
+function searchForm(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-input");
+  let city = document.querySelector("#city");
+  city.innerHTML = `${searchInput.value}`;
 }
+
+// Feature 1
+let currentDate = new Date();
+let day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+let time = currentDate.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
+let today = document.querySelector("#today");
+today.innerHTML = `${day[currentDate.getDay()]} ${time}`;
+
+// Feature 2 - Executes searchForm function when user clicks the search button
+let searchButton = document.querySelector("#search-form");
+searchButton.addEventListener("submit", searchForm);
+
+// Bonus feature
+function convertToFahrenheit(event) {
+  event.preventDefault
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = 81;
+}
+
+function convertToCelsius(event) {
+  event.preventDefault
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = 27;
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
