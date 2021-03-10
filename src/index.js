@@ -1,9 +1,21 @@
 function searchForm(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-input");
+  let apiKey = "2de1e0b71614dec5ecd1e018c409e23c";
+  let units = "metric";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=${units}`; 
   let city = document.querySelector("#city");
   city.innerHTML = `${searchInput.value}`;
+  axios.get(url).then(displayWeather);
 }
+
+
+function displayWeather(response) {
+  let temp = Math.round(response.data.main.temp);
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = `${temp}`;
+}
+
 
 // Feature 1
 let currentDate = new Date();
@@ -16,6 +28,7 @@ today.innerHTML = `${day[currentDate.getDay()]} ${time}`;
 let searchButton = document.querySelector("#search-form");
 searchButton.addEventListener("submit", searchForm);
 
+/*
 // Bonus feature
 function convertToFahrenheit(event) {
   event.preventDefault
@@ -34,3 +47,4 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
+*/
