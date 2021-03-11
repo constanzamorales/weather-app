@@ -5,12 +5,12 @@ function searchForm(event) {
   let units = "metric";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=${units}`; 
   // city.innerHTML = `${searchInput.value}`;
-  // axios.get(url).then(displayWeather);
   axios.get(url).then(function retreiveCityName(city) {
     let cityName = city.data.name;
     let countryName = city.data.sys.country;
     let citySearched = document.querySelector("#city");
     citySearched.innerHTML = `${cityName}, ${countryName}`;  
+    axios.get(url).then(displayWeather);
   });
 }
 
