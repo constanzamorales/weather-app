@@ -156,6 +156,10 @@ footer {
   margin: 10px auto;
 }
 
+.coded-by a {
+  color: rgb(0, 0, 0);
+}
+
 .icons-attribution,
 .icons-attribution a {
   color: rgba(0, 0, 0, 0.4);
