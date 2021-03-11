@@ -106,8 +106,8 @@ footer {
   padding-right: 0;
 }
 
-.precipitation-icon {
-  content: url("https://gist.github.com/constanzamorales/b82de13486f92db894839dd6d36afbb8/raw/cea50f51a4fc1ed774b7abed4b308c576c2c7c36/precipitation.svg");
+.pressure-icon {
+  content: url("https://gist.githubusercontent.com/constanzamorales/068ad47181ce7fa1c7a95fc5056949f7/raw/ac2fd16a37354ce30357f353c59379bb940a0128/pressure.svg");
   width: 16px;
   height: 16px;
   position: relative;

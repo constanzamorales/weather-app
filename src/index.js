@@ -4,8 +4,9 @@ function searchForm(event) {
   let apiKey = "2de1e0b71614dec5ecd1e018c409e23c";
   let units = "metric";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=${units}`; 
-  // city.innerHTML = `${searchInput.value}`;
+  city.innerHTML = `${searchInput.value}`;
   axios.get(url).then(function retreiveCityName(city) {
+    console.log(city.data);
     let cityName = city.data.name;
     let countryName = city.data.sys.country;
     let citySearched = document.querySelector("#city");
@@ -15,12 +16,19 @@ function searchForm(event) {
 }
 
 function displayWeather(response) {
-  console.log(response);
+  console.log(response.data);
   let temp = Math.round(response.data.main.temp);
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = `${temp}`;
-}
+  let weatherCondition = response.data.weather[0].description;
+  let pressure = (response.data.main.pressure).toLocaleString(undefined, {minimunFractionDigits: 0});
+  let humidity = response.data.main.humidity;
+  let wind = response.data.wind.speed;
 
+  document.querySelector("#temperature").innerHTML = `${temp}`;
+  document.querySelector("#weather-condition").innerHTML = weatherCondition.charAt(0).toUpperCase() + weatherCondition.slice(1);
+  document.querySelector("#pressure").innerHTML = `<i class="pressure-icon"></i>${pressure} hPa`;
+  document.querySelector("#humidity").innerHTML = `<i class="humidity-icon"></i>${humidity}%`;
+  document.querySelector("#wind").innerHTML = `<i class="wind-icon"></i>${wind} km/h`;
+}
 
 // Feature 1
 let currentDate = new Date();
