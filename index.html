@@ -34,10 +34,10 @@
         Santiago, CL
       </h1>
       <ul>
-        <li id="today">
+        <li id="date">
           Saturday 12:00
         </li>
-        <li id="weather-condition">
+        <li id="current-weather-condition">
           Clear
         </li>
       </ul>
@@ -46,11 +46,10 @@
         <div class="col-5">
           <div class="clearfix">
             <img
-              src="https://gist.githubusercontent.com/constanzamorales/014ebae4aa56b922ce1d7342bc8fcc84/raw/ea8602e96e1391c3510ace98d372fb2bdc9d2153/sun.svg"
-              id="icon" alt="Sun icon" class="weather-icon float-left" />
+              src=""
+              id="icon" alt="Clear" class="weather-icon float-left" />
             <div class="float-left">
               <span id="temperature" class="temperature">
-                27
               </span>
               <span class="units">
                 <a href="#" id="celsius-link">°C</a> |
@@ -61,11 +60,11 @@
         </div>
 
         <div class="col-7">
-          <div class="row">
+          <div class="current row">
             <div class="col-4">
               <div class="card left-border text-center">
                 <h6 id="pressure" class="card-title">
-                  <i class="pressure-icon"></i>1,000 hPa
+                  <i class="pressure-icon"></i>
                 </h6>
                 <div class="card-body">
                   Pressure
@@ -76,7 +75,6 @@
               <div class="card left-border text-center">
                 <h6 id="humidity" class="card-title">
                   <i class="humidity-icon"></i>
-                  1%
                 </h6>
                 <div class="card-body">
                   Humidity
@@ -86,7 +84,7 @@
             <div class="col-4">
               <div class="card text-center">
                 <h6 id="wind" class="card-title">
-                  <i class="wind-icon"></i>13 km/h
+                  <i class="wind-icon"></i>
                 </h6>
                 <div class="card-body">
                   Wind
@@ -100,71 +98,7 @@
       <hr />
 
       <!--Next days-->
-      <div class="card-group">
-        <div class="card text-center">
-          <h5 class="card-title">
-            Sunday
-          </h5>
-          <div class="card-body">
-            <img src="https://i.imgur.com/llEG8qY.png" alt="Sun icon" class="card-img-top small-weather-icon">
-            <p class="card-text">
-              Sunny <br />
-              <strong>31°</strong> / 17°
-            </p>
-          </div>
-        </div>
-
-        <div class="card text-center">
-          <h5 class="card-title">
-            Monday
-          </h5>
-          <div class="card-body">
-            <img src="https://i.imgur.com/llEG8qY.png" alt="Sun icon" class="card-img-top small-weather-icon">
-            <p class="card-text">
-              Sunny <br />
-              <strong>33°</strong> / 17°
-            </p>
-          </div>
-        </div>
-
-        <div class="card text-center">
-          <h5 class="card-title">
-            Tuesday
-          </h5>
-          <div class="card-body">
-            <img src="https://i.imgur.com/llEG8qY.png" alt="Sun icon" class="card-img-top small-weather-icon">
-            <p class="card-text">
-              Sunny <br />
-              <strong>30°</strong> / 16°
-            </p>
-          </div>
-        </div>
-
-        <div class="card text-center">
-          <h5 class="card-title">
-            Wednesday
-          </h5>
-          <div class="card-body">
-            <img src="https://i.imgur.com/NZKCXuG.png" alt="Sun icon" class="card-img-top small-weather-icon">
-            <p class="card-text">
-              Mostly sunny <br />
-              <strong>28°</strong> / 14°
-            </p>
-          </div>
-        </div>
-
-        <div class="card text-center">
-          <h5 class="card-title">
-            Thursday
-          </h5>
-          <div class="card-body">
-            <img src="https://i.imgur.com/NZKCXuG.png" alt="Sun icon" class="card-img-top small-weather-icon">
-            <p class="card-text">
-              Mostly sunny <br />
-              <strong>28°</strong> / 14°
-            </p>
-          </div>
-        </div>
+      <div id="forecast" class="card-group">
       </div>
     </div>
   </div>
