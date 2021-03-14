@@ -44,7 +44,7 @@ function displayWeather(response) {
   let citySearched = document.querySelector("#city");
   citySearched.innerHTML = `${cityName}, ${countryName}`;
 
-  let tempCelsius = Math.round(response.data.main.temp);
+  tempCelsius = Math.round(response.data.main.temp);
   let weatherCondition = response.data.weather[0].description;
   let pressure = (response.data.main.pressure).toLocaleString(undefined, {minimunFractionDigits: 0});
   let humidity = response.data.main.humidity;
@@ -88,9 +88,9 @@ function displayForecast(response) {
 
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature");
   let tempFahrenheit = (tempCelsius * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(tempFahrenheit);
 }
